@@ -1,10 +1,10 @@
+import math
+val=3000
+sum=0
+ratio=0.98
+for year in range(10):
+    sum += val * math.pow(ratio, year)
 
-list1=[1, 2, 3]
-list2=[4,5,6]
-for i in list1:
-    print i
-
-listl=[list1, list2]
-
-list0=[num for listt in listl for num in listt]
-print list0
+print(sum)
+payback=val*10*math.pow(ratio, 20)
+print(payback)
