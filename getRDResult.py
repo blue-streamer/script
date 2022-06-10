@@ -101,7 +101,10 @@ def createOriginBookAndGetResult(anchor, test, template):
     app.kill()
 
 #def copyBookAndGetResult(anchor, test, templ):
-def copyBookAndGetResult(anchor, test, template, newResult):
+#def copyBookAndGetResult(anchor, test, template, newResult):
+def copyBookAndGetResult(anchor, test, template):
+    newResult = anchor.split(".")[0] + "VS" + test.split(".")[0]
+    print("resultFile:", newResult)
     os.system("cp " + template + " " + newResult + ".xlsm")
     app = xw.App(visible=False)
     #app = xw.App(visible=True)
@@ -113,8 +116,8 @@ def copyBookAndGetResult(anchor, test, template, newResult):
     print("finish!")
     #app.kill()
 
-
 if __name__ == '__main__':
     #argv: anchor test template resultName
     #createOriginBookAndGetResult(sys.argv[1], sys.argv[2], sys.argv[3])
-    copyBookAndGetResult(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    #copyBookAndGetResult(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    copyBookAndGetResult(sys.argv[1], sys.argv[2], sys.argv[3])

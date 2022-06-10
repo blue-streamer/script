@@ -72,7 +72,7 @@ resultWriter.writerow(finalRowHeader)
 finalRow = [" "] * leadingBlank
 for resultList in resultSet:
     resultArr = np.array(resultList)
-    finalRow.append(resultArr.mean())
+    finalRow.append("%.3f%%"%(resultArr.mean()*100))
 resultWriter.writerow(finalRow)
 
 anchorFile.close()
